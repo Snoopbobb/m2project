@@ -1,0 +1,60 @@
+/* css styles for m2 project */
+
+body {
+	background-image: url(../images/background.jpg);
+	background-size: cover;
+	margin: 0;
+	font-family: lato;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+header h1 {
+	font-family: lobster;
+	color: black;
+	background-color: white;
+	margin: 0;
+	padding: 8px 20px;
+	font-size: 250%;
+}
+
+nav {
+	background-color: black;
+	padding: 10px 8px;
+	margin: 0;
+	color: white;
+}
+
+nav a {
+	margin: 0 5px;
+	color: lightgray;
+}
+
+main {
+	background-color: rgba(255,255,255,.9);
+	padding: 5px 0;
+	margin: 15px 15px;
+	border-radius: 15px;
+}
+
+main h1, main h2, main a {
+	color: lightgreen;
+}
+
+main h1, main h2, main h3, main label {
+	margin-left: 10px;
+}
+
+main .hidden {
+	display: none;
+}
+
+footer {
+	color: white;
+	margin-left: 15px;
+}
+
+
