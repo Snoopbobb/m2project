@@ -1,25 +1,13 @@
 <?php
-require_once('product.php');
+
+// Require the products database
+require_once('products.php');
+
+// Loop through database and populate drop down options
 $opts = ''; 
-$quanity = '';
-$os = "";
-$msg = "";
-$hidden_class = "";
-
-if(isset($_GET['product'])) {
-	$quanity = $_GET['quanity'];
-	$os = $_GET['product'];
-	$msg = "<h1>You want to order $quanity $os machines.</h1>";
-	$hidden_class = 'hidden';
-	if($os == 'Macintosh' && $quanity > 7) {
-		$msg = "<h1>You can't order over 7 $os</h1>";
-	}
-} 
-	 
-foreach ($products as $product) {
-	 	$opts .= "<option value=\"$product\">$product</option>";	
+foreach ($products as $key => $product) {
+	 	$opts .= "<option value=\"$key\">$product</option>";	
 }
-
 ?>
 
 
@@ -33,14 +21,16 @@ foreach ($products as $product) {
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
 	<?php require_once('header.php'); ?>
+
 	<main>
-		<?php echo $msg; ?>
-		<div class="<?php echo $hidden_class ?>">
+		
+		<div>
 			<h1>Browse Products</h1> 
-			<form action="">
+			<form action="product.php">
 		 		<label>Product:</label>
-		 		<select name="product">
+		 		<select name="product_id">
 		 			<?php echo $opts; ?>
 		 		</select>
 		 		<label>Quanity:</label>
@@ -49,7 +39,9 @@ foreach ($products as $product) {
 		 	</form>
 	 	</div>
 	</main>
+
 	<?php require_once('footer.php'); ?>
+
 </body>
 </html>
 
